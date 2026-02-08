@@ -10,7 +10,7 @@ print("API CONNECTION TEST")
 print("="*60)
 
 if test_api_connection():
-    print("\n✅ API connection successful\n")
+    print("\n API connection successful\n")
     
     print("="*60)
     print("AVAILABLE MODELS")
@@ -26,4 +26,4 @@ if test_api_connection():
     
     print(f"\nTotal models: {len(models)}")
 else:
-    print("\n❌ API connection failed")
+    print("\n API connection failed")
