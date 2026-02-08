@@ -52,7 +52,7 @@ def process_all_ads(pdf_dir: str = "data/raw", output_dir: str = "data/extracted
     for pdf_file, ad_id in ad_files.items():
         pdf_path = pdf_dir / pdf_file
         if not pdf_path.exists():
-            print(f"⚠️  {pdf_file} not found")
+            print(f"  {pdf_file} not found")
             continue
         
         try:
