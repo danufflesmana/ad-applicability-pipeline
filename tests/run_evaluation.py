@@ -30,7 +30,7 @@ def load_existing_rules():
                 rules[ad_id] = rule
                 print(f"✓ Loaded {ad_id} from existing JSON")
         else:
-            print(f"⚠️  {json_file} not found")
+            print(f"  {json_file} not found")
     
     return rules
 
@@ -41,7 +41,7 @@ def print_table(results):
         if key not in data:
             data[key] = {'model': r.aircraft.model, 'msn': r.aircraft.msn, 
                          'mods': ','.join(r.aircraft.modifications) or 'None'}
-        status = f"{Fore.GREEN}✅ AFFECTED" if r.is_affected else f"{Fore.RED}❌ NOT AFFECTED"
+        status = f"{Fore.GREEN} AFFECTED" if r.is_affected else f"{Fore.RED} NOT AFFECTED"
         data[key][r.ad_id] = status
     
     headers = ["Aircraft", "MSN", "Mods", "FAA AD", "EASA AD"]
@@ -66,13 +66,13 @@ def verify(results):
         if key in expected and r.ad_id in expected[key]:
             exp = expected[key][r.ad_id]
             match = r.is_affected == exp
-            status = f"{Fore.GREEN}✅ PASS" if match else f"{Fore.RED}❌ FAIL"
+            status = f"{Fore.GREEN} PASS" if match else f"{Fore.RED} FAIL"
             print(f"{status} | {r.aircraft.model} MSN{r.aircraft.msn} | {r.ad_id} | Exp:{exp} Got:{r.is_affected}")
             if not match:
                 passed = False
     
     print("="*80)
-    print(f"{Fore.GREEN}✅ ALL PASSED" if passed else f"{Fore.RED}❌ FAILED")
+    print(f"{Fore.GREEN} ALL PASSED" if passed else f"{Fore.RED} FAILED")
     print("="*80 + "\n")
     return passed
 
@@ -83,7 +83,7 @@ def main():
     rules = load_existing_rules()
     
     if not rules:
-        print("❌ No rules found. Run: python -m src.pipeline first")
+        print(" No rules found. Run: python -m src.pipeline first")
         return
     
     print(f"✓ Loaded {len(rules)} ADs\n")
