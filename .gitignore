@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+*.egg-info/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Data
+data/raw/*.pdf
+*.pdf
+
+# Outputs
+data/extracted/*.json
+
+# Environment
+.env
+.DS_Store
