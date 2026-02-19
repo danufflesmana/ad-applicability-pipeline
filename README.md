@@ -2,14 +2,7 @@
 
 Automated system for extracting applicability rules from Airworthiness Directive PDFs and evaluating aircraft compliance using LLMs.
 
-## 🎯 Results
-
-✅ **100% accuracy** on all verification test cases  
-✅ Successfully extracted rules from 2 ADs (FAA & EASA)  
-✅ Deterministic evaluation logic  
-✅ Structured JSON output  
-
-## 🚀 Quick Start
+## Quick Start
 ```bash
 # Install dependencies
 pip install -r requirements.txt
@@ -28,7 +21,7 @@ python -m src.pipeline
 python tests/run_evaluation.py
 ```
 
-## 📁 Project Structure
+## Project Structure
 ```
 ad-applicability-pipeline/
 ├── src/
@@ -46,14 +39,14 @@ ad-applicability-pipeline/
 └── requirements.txt
 ```
 
-## 🛠 Technology Stack
+## Technology Stack
 
 - **API:** LiteLLM Proxy (Gemini 2.5 Flash)
 - **PDF Processing:** pdfplumber
 - **Data Validation:** Pydantic
 - **Language:** Python 3.12
 
-## 📊 Architecture
+## Architecture
 
 **3-Stage Pipeline:**
 1. **PDF Ingestion** - Text extraction with quality checks
@@ -62,7 +55,7 @@ ad-applicability-pipeline/
 
 **Key Design Decision:** AI for semantic understanding (extraction), deterministic logic for compliance decisions (evaluation).
 
-## 🧪 Verification Results
+## Verification Results
 
 | Aircraft | MSN | Modifications | FAA AD | EASA AD | Status |
 |----------|-----|---------------|--------|---------|--------|
@@ -70,7 +63,7 @@ ad-applicability-pipeline/
 | A320-214 | 4500 | mod 24591 | ❌ | ❌ | ✅ PASS |
 | A320-214 | 4500 | None | ❌ | ✅ | ✅ PASS |
 
-## 📝 Output Format
+## Output Format
 ```json
 {
   "ad_id": "FAA-2025-23-53",
@@ -82,7 +75,7 @@ ad-applicability-pipeline/
 }
 ```
 
-## 📄 Documentation
+## Documentation
 
 See [report.md](report.md) for detailed technical analysis including:
 - Approach & architecture
@@ -90,6 +83,6 @@ See [report.md](report.md) for detailed technical analysis including:
 - Challenges & solutions
 - Limitations & future work
 
-## 👤 Author
+## Author
 
 Danu Febriansyah - Data Science/AI Engineer Assignment
