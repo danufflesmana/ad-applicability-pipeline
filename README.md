@@ -82,7 +82,3 @@ See [report.md](report.md) for detailed technical analysis including:
 - Trade-off analysis
 - Challenges & solutions
 - Limitations & future work
-
-## Author
-
-Danu Febriansyah - Data Science/AI Engineer Assignment
